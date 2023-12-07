@@ -55,13 +55,14 @@ body {
   margin: 0 1rem;
   position: relative;
   background-image: linear-gradient(var(--clr-gradient));
+  cursor: pointer;
 }
 .btn-toggle {
   position: absolute;
   background-color: var(--clr-primary);
   top: 50%;
   transform: translateY(-50%);
-  left: 0;
+  left: 2.5rem;
   margin-left: 0.2rem;
   width: 2rem;
   height: 2rem;
@@ -69,11 +70,19 @@ body {
   cursor: pointer;
   transition: all 400ms ease-in-out;
 }
+.btn-toggle.active {
+  left: 0;
+}
 .card__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   border-radius: 1em;
+}
+.card__container.active .monthly {
+  display: none;
+}
+.card__container.active .yearly {
+  display: block;
 }
 .card__pricing {
   padding: 3rem;
@@ -126,18 +135,32 @@ body {
 .btn {
   width: 100%;
   padding: 1em;
-  background-color: transparent;
-  border: 1px solid var(--clr-background);
-  color: var(--clr-secondary);
   border-radius: 0.5em;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   cursor: pointer;
+  background: linear-gradient(var(--clr-gradient));
+  color: var(--clr-primary);
+  border: none;
+  outline: none;
+}
+.btn:hover,
+.btn:active {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid var(--clr-background);
+  color: var(--clr-secondary);
 }
 .card__popular .btn {
-  color: var(--clr-primary);
+  background-image: none;
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
   border-color: var(--clr-primary);
+}
+.card__popular .btn:hover {
+  background-color: transparent;
+  color: var(--clr-primary);
 }
 @media (max-width: 900px) {
   .card__container {
