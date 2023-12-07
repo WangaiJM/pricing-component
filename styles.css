@@ -72,8 +72,8 @@ body {
 .card__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: var(--clr-primary);
-  gap: 2em;
+
+  border-radius: 1em;
 }
 .card__pricing {
   padding: 3rem;
@@ -82,6 +82,7 @@ body {
   flex-direction: column;
   align-items: center;
   border-radius: 1em;
+  background-color: var(--clr-primary);
 }
 .card__popular {
   background-image: linear-gradient(var(--clr-gradient));
@@ -137,4 +138,33 @@ body {
 .card__popular .btn {
   color: var(--clr-primary);
   border-color: var(--clr-primary);
+}
+@media (max-width: 900px) {
+  .card__container {
+    width: 87%;
+    margin: 0 auto;
+  }
+  .card__pricing {
+    padding: 2rem;
+  }
+  .price__amount {
+    font-size: 4.8rem;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    padding: 5rem;
+  }
+  .card__container {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    gap: 2em;
+  }
+  .card__pricing {
+    margin-bottom: 1em;
+  }
+  .card__popular {
+    scale: 1;
+  }
 }
